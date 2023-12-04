@@ -394,7 +394,7 @@ class EnvVars:
         deactivate = textwrap.dedent("""\
             setlocal
             echo @echo off > "%~dp0/{deactivate_file}"
-            echo echo Restoring environment >> "%~dp0/{deactivate_file}"
+            echo Restoring environment >> "%~dp0/{deactivate_file}"
             for %%v in ({vars}) do (
                 set foundenvvar=
                 for /f "delims== tokens=1,2" %%a in ('set') do (
