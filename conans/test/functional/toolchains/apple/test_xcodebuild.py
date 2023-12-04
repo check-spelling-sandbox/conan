@@ -163,4 +163,4 @@ def test_missing_sdk(client):
     client.run("install . -s build_type=Debug --build=missing")
     client.run_command("xcodegen generate")
     client.run("create . --build=missing -s os.sdk=macosx -s os.sdk_version=12.0 "
-               "-c tools.apple:sdk_path=notexistingsdk", assert_error=True)
+               "-c tools.apple:sdk_path=nonexistentsdk", assert_error=True)

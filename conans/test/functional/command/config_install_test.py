@@ -321,15 +321,15 @@ class ConfigInstallTest(unittest.TestCase):
     def test_failed_install_repo(self):
         """ should install from a git repo
         """
-        self.client.run('config install notexistingrepo.git', assert_error=True)
+        self.client.run('config install nonexistentrepo.git', assert_error=True)
         self.assertIn("ERROR: Failed conan config install: Can't clone repo", self.client.out)
 
     def test_failed_install_http(self):
         """ should install from a http zip
         """
-        self.client.run('config install httpnonexisting', assert_error=True)
+        self.client.run('config install httpnonexistent', assert_error=True)
         self.assertIn("ERROR: Failed conan config install: "
-                      "Error while installing config from httpnonexisting", self.client.out)
+                      "Error while installing config from httpnonexistent", self.client.out)
 
     @pytest.mark.tool("git")
     def test_install_repo(self):
@@ -383,24 +383,24 @@ class ConfigInstallTest(unittest.TestCase):
 
     def test_force_git_type(self):
         client = TestClient()
-        client.run('config install httpnonexisting --type=git', assert_error=True)
+        client.run('config install httpnonexistent --type=git', assert_error=True)
         self.assertIn("Can't clone repo", client.out)
 
     def test_force_dir_type(self):
         client = TestClient()
-        client.run('config install httpnonexisting --type=dir', assert_error=True)
-        self.assertIn("ERROR: Failed conan config install: No such directory: 'httpnonexisting'",
+        client.run('config install httpnonexistent --type=dir', assert_error=True)
+        self.assertIn("ERROR: Failed conan config install: No such directory: 'httpnonexistent'",
                       client.out)
 
     def test_force_file_type(self):
         client = TestClient()
-        client.run('config install httpnonexisting --type=file', assert_error=True)
-        self.assertIn("No such file or directory: 'httpnonexisting'", client.out)
+        client.run('config install httpnonexistent --type=file', assert_error=True)
+        self.assertIn("No such file or directory: 'httpnonexistent'", client.out)
 
     def test_force_url_type(self):
         client = TestClient()
-        client.run('config install httpnonexisting --type=url', assert_error=True)
-        self.assertIn("Error downloading file httpnonexisting: 'Invalid URL 'httpnonexisting'",
+        client.run('config install httpnonexistent --type=url', assert_error=True)
+        self.assertIn("Error downloading file httpnonexistent: 'Invalid URL 'httpnonexistent'",
                       client.out)
 
     def test_removed_credentials_from_url_unit(self):

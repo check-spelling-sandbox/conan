@@ -24,8 +24,8 @@ def test_conf_definition(conf_definition):
     # access
     assert c.get("tools.build:verbosity") == "quiet"
     assert c.get("user.company.toolchain:flags") == "someflags"
-    assert c.get("user.microsoft.msbuild:nonexist") is None
-    assert c.get("user:nonexist") is None
+    assert c.get("user.microsoft.msbuild:nonexistent") is None
+    assert c.get("user:nonexistent") is None
     # bool
     assert bool(c)
     assert not bool(ConfDefinition())

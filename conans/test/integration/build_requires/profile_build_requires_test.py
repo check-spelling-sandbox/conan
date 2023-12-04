@@ -38,13 +38,13 @@ class mylib(ConanFile):
 profile = """
 [tool_requires]
 tool/0.1@lasote/stable
-nonexistingpattern*: sometool/1.2@user/channel
+nonexistentpattern*: sometool/1.2@user/channel
 """
 
 profile2 = """
 [tool_requires]
 tool/0.1@lasote/stable
-nonexistingpattern*: sometool/1.2@user/channel
+nonexistentpattern*: sometool/1.2@user/channel
 """
 
 
@@ -158,7 +158,7 @@ class mylib(ConanFile):
         profile_patterns = """
 [tool_requires]
 &: tool/0.1@lasote/stable
-nonexistingpattern*: sometool/1.2@user/channel
+nonexistentpattern*: sometool/1.2@user/channel
 """
         client.save({CONANFILE: lib_conanfile,
                      "test_package/conanfile.py": test_conanfile,

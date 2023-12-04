@@ -185,7 +185,7 @@ override = conanfile.format("""build_requires = "Tool/0.2@user/channel"
 profile = """
 [tool_requires]
 Tool/0.3@lasote/stable
-nonexistingpattern*: SomeTool/1.2@user/channel
+nonexistentpattern*: SomeTool/1.2@user/channel
 """
 
 

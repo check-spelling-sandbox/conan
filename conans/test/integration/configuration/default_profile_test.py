@@ -186,7 +186,7 @@ class MyConanfile(ConanFile):
             client.run("create . --name=name --version=version --user=user --channel=channel")
             self.assertIn(">>> " + env_variable, client.out)
 
-        # Use non existing path
+        # Use nonexistent path
         profile_path = os.path.join(tmp, "this", "is", "a", "path")
         self.assertTrue(os.path.isabs(profile_path))
         with environment_update({'CONAN_DEFAULT_PROFILE': profile_path}):

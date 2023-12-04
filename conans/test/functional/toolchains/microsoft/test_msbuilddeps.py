@@ -655,7 +655,7 @@ class MSBuildGeneratorTest(unittest.TestCase):
                           ("['pkg*']", True, True),
                           ("['pkga', 'pkgb']", True, True),
                           ("['*a', '*b']", True, True),
-                          ("['nonexist']", False, False),
+                          ("['nonexistent']", False, False),
                           ])
 def test_exclude_code_analysis(pattern, exclude_a, exclude_b):
     client = TestClient()

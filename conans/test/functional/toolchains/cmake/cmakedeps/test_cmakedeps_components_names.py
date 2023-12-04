@@ -546,14 +546,14 @@ class TestComponentsCMakeGenerators:
             class WorldConan(ConanFile):
                 requires = "greetings/0.0.1"
                 def package_info(self):
-                    self.cpp_info.components["helloworld"].requires = ["greetings::non-existent"]
+                    self.cpp_info.components["helloworld"].requires = ["greetings::nonexistent"]
                     self.cpp_info.components["helloworld"].libdirs = ["lib"]
                     self.cpp_info.components["helloworld"].includedirs = ["include"]
         """)
         client.save({"conanfile.py": conanfile})
         client.run("create . --name=world --version=0.0.1")
         client.run("install --requires=world/0.0.1@ -g CMakeDeps", assert_error=True)
-        assert ("Component 'greetings::non-existent' not found in 'greetings' "
+        assert ("Component 'greetings::nonexistent' not found in 'greetings' "
                 "package requirement" in client.out)
 
     def test_component_not_found_same_name_as_pkg_require(self):
@@ -605,12 +605,12 @@ class TestComponentsCMakeGenerators:
                 class WorldConan(ConanFile):
                     requires = "greetings/0.0.1"
                     def package_info(self):
-                        self.cpp_info.components["helloworld"].requires = ["greetings::non-existent"]
+                        self.cpp_info.components["helloworld"].requires = ["greetings::nonexistent"]
             """)
             client.save({"conanfile.py": conanfile})
             client.run("create . --name=world --version=0.0.1")
             client.run("install --requires=world/0.0.1@ -g CMakeDeps", assert_error=True)
-            assert ("Component 'greetings::non-existent' not found in 'greetings' "
+            assert ("Component 'greetings::nonexistent' not found in 'greetings' "
                     "package requirement" in client.out)
 
         client = TestClient()

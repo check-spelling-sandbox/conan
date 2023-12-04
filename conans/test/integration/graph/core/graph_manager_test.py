@@ -51,7 +51,7 @@ class TestLinear(GraphManagerTest):
         self._check_node(libb, "libb/0.1#123", deps=[], dependents=[app])
 
     def test_dependency_missing(self):
-        # app -> libb0.1 (non existing)
+        # app -> libb0.1 (nonexistent)
         consumer = self.recipe_consumer("app/0.1", ["libb/0.1"])
         deps_graph = self.build_consumer(consumer, install=False)
 

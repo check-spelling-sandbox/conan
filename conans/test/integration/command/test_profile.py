@@ -13,8 +13,8 @@ def test_profile_path():
 
 def test_profile_path_missing():
     c = TestClient()
-    c.run("profile path notexisting", assert_error=True)
-    assert "ERROR: Profile not found: notexisting" in c.out
+    c.run("profile path nonexistent", assert_error=True)
+    assert "ERROR: Profile not found: nonexistent" in c.out
 
 
 def test_ignore_paths_when_listing_profiles():

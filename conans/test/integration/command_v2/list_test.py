@@ -558,8 +558,8 @@ class TestListPrefs:
 
     @pytest.mark.parametrize("remote", [True, False])
     def test_list_missing_package_id(self, client, remote):
-        pattern = "zli/1.0.0:nonexists_id"
-        expected = "ERROR: Package ID 'zli/1.0.0:nonexists_id' not found\n"
+        pattern = "zli/1.0.0:nonexistent_id"
+        expected = "ERROR: Package ID 'zli/1.0.0:nonexistent_id' not found\n"
         self.check(client, pattern, remote, expected)
 
     @pytest.mark.parametrize("remote", [True, False])
