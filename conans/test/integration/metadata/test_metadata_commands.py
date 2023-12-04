@@ -200,4 +200,4 @@ class TestMetadataCommands:
         client.run("export .")
 
         client.run('upload * --confirm --remote=default --metadata="" --metadata="logs/*"', assert_error=True)
-        assert "ERROR: Empty string and patterns can not be mixed for metadata." in client.out
+        assert "ERROR: Empty string and patterns cannot be mixed for metadata." in client.out

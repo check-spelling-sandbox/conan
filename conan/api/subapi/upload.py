@@ -41,7 +41,7 @@ class UploadAPI:
         means all metadata will be uploaded together with the pkg artifacts. If metadata is empty
         string (""), it means that no metadata files should be uploaded."""
         if metadata and metadata != [''] and '' in metadata:
-            raise ConanException("Empty string and patterns can not be mixed for metadata.")
+            raise ConanException("Empty string and patterns cannot be mixed for metadata.")
         app = ConanApp(self.conan_api.cache_folder, self.conan_api.config.global_conf)
         preparator = PackagePreparator(app, self.conan_api.config.global_conf)
         preparator.prepare(package_list, enabled_remotes)

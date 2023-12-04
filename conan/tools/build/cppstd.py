@@ -16,7 +16,7 @@ def check_min_cppstd(conanfile, cppstd, gnu_extensions=False):
            default from cppstd_default)
         3. If not settings.compiler is present (not declared in settings) will raise because it
            cannot compare.
-        4. If can not detect the default cppstd for settings.compiler, a exception will be raised.
+        4. If cannot detect the default cppstd for settings.compiler, a exception will be raised.
 
     :param conanfile: The current recipe object. Always use ``self``.
     :param cppstd: Minimal cppstd version required
@@ -36,7 +36,7 @@ def check_max_cppstd(conanfile, cppstd, gnu_extensions=False):
            default from cppstd_default)
         3. If not settings.compiler is present (not declared in settings) will raise because it
            cannot compare.
-        4. If can not detect the default cppstd for settings.compiler, a exception will be raised.
+        4. If cannot detect the default cppstd for settings.compiler, a exception will be raised.
 
     :param conanfile: The current recipe object. Always use ``self``.
     :param cppstd: Maximum cppstd version required
@@ -131,7 +131,7 @@ def _check_cppstd(conanfile, cppstd, comparator, gnu_extensions):
            default from cppstd_default)
         3. If not settings.compiler is present (not declared in settings) will raise because it
            cannot compare.
-        4. If can not detect the default cppstd for settings.compiler, a exception will be raised.
+        4. If cannot detect the default cppstd for settings.compiler, a exception will be raised.
 
     :param conanfile: The current recipe object. Always use ``self``.
     :param cppstd: Required cppstd version.

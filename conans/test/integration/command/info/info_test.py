@@ -43,7 +43,7 @@ class TestBasicCliOutput:
         client.run("create .")
         pref = client.get_latest_package_reference("pkg/0.2")
         client.run("graph info .")
-        # It's a consumer so we can not get the prev because it's not even a package yet
+        # It's a consumer so we cannot get the prev because it's not even a package yet
         assert "prev: None" in client.out
         # Now, let's create another consumer requiring the previous package
         client.save({"conanfile.txt": "[requires]\npkg/0.2"}, clean_first=True)

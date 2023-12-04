@@ -155,11 +155,11 @@ class AuthorizerTest(unittest.TestCase):
         # Authenticated user can read package
         authorizer.check_read_package("pepe", self.openssl_pref)
 
-        # Anonymous user can not read conan, they must authenticate
+        # Anonymous user cannot read conan, they must authenticate
         self.assertRaises(AuthenticationException,
                           authorizer.check_read_conan, None, self.openssl_ref)
 
-        # Anonymous user can not read package, they must authenticate
+        # Anonymous user cannot read package, they must authenticate
         self.assertRaises(AuthenticationException,
                           authorizer.check_read_package, None, self.openssl_pref)
 
@@ -171,11 +171,11 @@ class AuthorizerTest(unittest.TestCase):
         # Authenticated user can write package
         authorizer.check_write_package("pepe", self.openssl_pref)
 
-        # Anonymous user can not write conan, they must authenticate
+        # Anonymous user cannot write conan, they must authenticate
         self.assertRaises(AuthenticationException,
                           authorizer.check_write_conan, None, self.openssl_ref)
 
-        # Anonymous user can not write package, they must authenticate
+        # Anonymous user cannot write package, they must authenticate
         self.assertRaises(AuthenticationException,
                           authorizer.check_write_package, None, self.openssl_pref)
 
