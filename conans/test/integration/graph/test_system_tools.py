@@ -118,7 +118,7 @@ class TestToolRequires:
         assert "conanfile.py: DEPENDENCY tool/1.1#rev1" in client.out
 
     def test_consumer_unresolved_revision(self):
-        """ if a recipe specifies an exact revision and so does the profiñe
+        """ if a recipe specifies an exact revision and so does the profile
         and it doesn't match, it is an error
         """
         client = TestClient()
