@@ -54,7 +54,7 @@ def client():
     return client
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("xcodebuild")
 @pytest.mark.tool("xcodegen")
 def test_project_xcodebuild(client):
@@ -100,7 +100,7 @@ def test_project_xcodebuild(client):
     assert "App Debug!" in client.out
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("xcodebuild")
 @pytest.mark.tool("xcodegen")
 @pytest.mark.skip(reason="Different sdks not installed in CI")
@@ -136,7 +136,7 @@ def test_xcodebuild_test_different_sdk(client):
     assert "sdk 11.3" in client.out
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("xcodebuild")
 @pytest.mark.tool("xcodegen")
 def test_missing_sdk(client):

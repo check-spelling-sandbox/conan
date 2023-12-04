@@ -147,7 +147,7 @@ dynamic_xcconfig = textwrap.dedent("""
 """)
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("xcodebuild")
 def test_shared_static_targets():
     """

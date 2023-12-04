@@ -22,7 +22,7 @@ xcode_project = textwrap.dedent("""
     """)
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("cmake")
 @pytest.mark.tool("xcodebuild")
 @pytest.mark.tool("xcodegen")
@@ -68,7 +68,7 @@ def test_xcodedeps_build_configurations():
         assert "hello/0.1: Hello World {}!".format(config).format(config) in client.out
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("cmake")
 @pytest.mark.tool("xcodebuild")
 @pytest.mark.tool("xcodegen")
@@ -100,7 +100,7 @@ def test_frameworks():
     assert "Hello!" in client.out
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("xcodebuild")
 @pytest.mark.tool("xcodegen")
 def test_xcodedeps_dashes_names_and_arch():
@@ -120,7 +120,7 @@ def test_xcodedeps_dashes_names_and_arch():
     assert "BUILD SUCCEEDED" in client.out
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("xcodebuild")
 @pytest.mark.tool("xcodegen")
 def test_xcodedeps_definitions_escape():

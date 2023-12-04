@@ -57,7 +57,7 @@ def check_contents(client, deps, configuration, architecture, sdk_version):
                               sdk="macosx", sdk_version=sdk_version) in conan_conf
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 def test_generator_files():
     client = TestClient()
     client.save({"hello.py": GenConanfile().with_settings("os", "arch", "compiler", "build_type")
@@ -89,7 +89,7 @@ def test_generator_files():
         check_contents(client, ["hello", "goodbye"], build_type, "x86_64", "12.1")
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 def test_generator_files_with_custom_config():
     client = TestClient()
 
@@ -111,7 +111,7 @@ def test_generator_files_with_custom_config():
             options = {"XcodeConfigName": [None, "ANY"]}
             default_options = {"XcodeConfigName": None}
             requires = "hello/0.1", "goodbye/0.1"
-            
+
             def generate(self):
                 xcode = XcodeDeps(self)
                 if self.options.get_safe("XcodeConfigName"):
@@ -127,9 +127,9 @@ def test_generator_files_with_custom_config():
             cli_command = "install . -s build_type={} -s arch=x86_64 -s os.sdk_version=12.1  --build missing".format(build_type)
             if use_custom_config:
                 cli_command += " -o XcodeConfigName={}".format(custom_config_name)
-                configuration_name = custom_config_name 
+                configuration_name = custom_config_name
             else:
-                configuration_name = build_type            
+                configuration_name = build_type
 
             client.run(cli_command)
 
@@ -145,7 +145,7 @@ def test_generator_files_with_custom_config():
 
             check_contents(client, ["hello", "goodbye"],  configuration_name, "x86_64", "12.1",)
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 def test_xcodedeps_aggregate_components():
     client = TestClient()
 
@@ -236,7 +236,7 @@ def test_xcodedeps_aggregate_components():
     assert "mylibdir" in component4_vars
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 def test_xcodedeps_traits():
     client = TestClient()
     conanfile_py = textwrap.dedent("""
@@ -359,7 +359,7 @@ def test_xcodedeps_traits():
     assert "cmp2_exelinkflag" not in comp2_info
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 def test_xcodedeps_frameworkdirs():
     client = TestClient()
 
@@ -386,7 +386,7 @@ def test_xcodedeps_frameworkdirs():
     assert "lib_a_frameworkdir" in lib_a_xcconfig
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 def test_xcodedeps_cppinfo_requires():
 
     """
@@ -470,7 +470,7 @@ def test_xcodedeps_cppinfo_requires():
     assert "cmp4" not in lib_c
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 def test_dependency_of_dependency_components():
     # testing: https://github.com/conan-io/conan/pull/11772
 

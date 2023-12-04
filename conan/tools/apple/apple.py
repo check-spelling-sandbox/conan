@@ -43,7 +43,7 @@ def get_apple_sdk_fullname(conanfile):
     Returns the 'os.sdk' + 'os.sdk_version ' value. Every user should specify it because
     there could be several ones depending on the OS architecture.
 
-    Note: In case of MacOS it'll be the same for all the architectures.
+    Note: In case of macOS it'll be the same for all the architectures.
     """
     os_ = conanfile.settings.get_safe('os')
     os_sdk = conanfile.settings.get_safe('os.sdk')

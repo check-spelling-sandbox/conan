@@ -196,7 +196,7 @@ def _validate_link_order(libs):
     expected_libs.update([it + ext_system for it in ['header_system_lib',
                                                      'header2_system_lib',
                                                      'system_lib']])
-    # - Add MacOS frameworks
+    # - Add macOS frameworks
     if platform.system() == "Darwin":
         expected_libs.update(['CoreAudio', 'Security', 'Carbon'])
     # - Add Windows libs

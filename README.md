@@ -43,7 +43,7 @@ This is the **developer/maintainer** documentation. For user documentation, go t
 
 ## Setup
 
-You can run Conan from source in Windows, MacOS, and Linux:
+You can run Conan from source in Windows, macOS, and Linux:
 
 - **Install pip following** [pip docs](https://pip.pypa.io/en/stable/installation/).
 

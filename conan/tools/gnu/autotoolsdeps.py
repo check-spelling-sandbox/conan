@@ -55,7 +55,7 @@ class AutotoolsDeps:
             ldflags.extend(flags.framework_paths)
             ldflags.extend(flags.lib_paths)
 
-            # set the rpath in Macos so that the library are found in the configure step
+            # set the rpath in macOS so that the library are found in the configure step
             if self._conanfile.settings.get_safe("os") == "Macos":
                 ldflags.extend(self._rpaths_flags())
 

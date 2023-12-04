@@ -42,7 +42,7 @@ class TgzMacosDotFilesTest(unittest.TestCase):
             shutil.rmtree(tmp_folder)
 
     def test_dot_files(self):
-        """ Check behavior related to ._ files in Macos OS
+        """ Check behavior related to ._ files in macOS OS
 
             Macos has the ability to store metadata associated to files. This metadata can be
             stored in the HFS+ (Apple native) or Unix/UFS volumes, but if the store does

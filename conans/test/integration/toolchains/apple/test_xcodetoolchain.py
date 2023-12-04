@@ -19,7 +19,7 @@ def _condition(configuration, architecture, sdk_version):
     return "[config={}][arch={}][sdk={}]".format(configuration, architecture, sdk)
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.parametrize("configuration, os_version, libcxx, cppstd, arch, sdk_version, clang_cppstd", [
     ("Release", "", "", "", "x86_64", "", ""),
     ("Debug", "", "", "", "armv8", "", ""),

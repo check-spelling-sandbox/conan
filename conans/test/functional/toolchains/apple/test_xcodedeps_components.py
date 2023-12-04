@@ -7,7 +7,7 @@ import pytest
 from conans.test.utils.tools import TestClient
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("cmake")
 def test_xcodedeps_components():
     """
@@ -204,7 +204,7 @@ def test_xcodedeps_components():
     assert "chat/1.0: Hello World Release!" in client.out
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("cmake")
 def test_cpp_info_require_whole_package():
     """
@@ -276,7 +276,7 @@ def test_cpp_info_require_whole_package():
     assert '#include "conan_liba_liba.xcconfig"' not in libc_comp1_xcconfig
 
 
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for MacOS")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Only for macOS")
 @pytest.mark.tool("cmake")
 def test_xcodedeps_test_require():
     client = TestClient()

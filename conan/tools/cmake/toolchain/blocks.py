@@ -754,7 +754,7 @@ class GenericSystemBlock(Block):
                 _system_version = None
                 _system_processor = None
                 if self._is_apple_cross_building():
-                    # cross-build in Macos also for M1
+                    # cross-build in macOS also for M1
                     system_name = {'Macos': 'Darwin'}.get(os_host, os_host)
                     #  CMAKE_SYSTEM_VERSION for Apple sets the sdk version, not the os version
                     _system_version = self._conanfile.settings.get_safe("os.sdk_version")

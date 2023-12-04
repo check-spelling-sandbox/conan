@@ -43,8 +43,8 @@ tools_locations = {
 }
 """
 
-MacOS_arm = all([platform.system() == "Darwin", platform.machine() == "arm64"])
-homebrew_root = "/opt/homebrew" if MacOS_arm else "/usr/local"
+macOS_arm = all([platform.system() == "Darwin", platform.machine() == "arm64"])
+homebrew_root = "/opt/homebrew" if macOS_arm else "/usr/local"
 
 
 tools_locations = {

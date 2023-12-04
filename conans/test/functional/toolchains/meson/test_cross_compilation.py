@@ -63,7 +63,7 @@ option('STRING_DEFINITION', type : 'string', description : 'a string option')
     ('armv7', 'iOS', '10.0', 'iphoneos'),
     ('x86', 'iOS', '10.0', 'iphonesimulator'),
     ('x86_64', 'iOS', '10.0', 'iphonesimulator'),
-    ('armv8', 'Macos', None, None)  # MacOS M1
+    ('armv8', 'Macos', None, None)  # macOS M1
 ])
 def test_apple_meson_toolchain_cross_compiling(arch, os_, os_version, os_sdk):
     profile = textwrap.dedent("""
@@ -156,7 +156,7 @@ def test_windows_cross_compiling_x86():
                                                  ('x86_64', 'x86_64')])
 @pytest.mark.tool("meson")
 @pytest.mark.tool("android_ndk")
-@pytest.mark.skipif(platform.system() != "Darwin", reason="Android NDK only tested in MacOS for now")
+@pytest.mark.skipif(platform.system() != "Darwin", reason="Android NDK only tested in macOS for now")
 @pytest.mark.skipif(sys.version_info.major == 2, reason="Meson not supported in Py2")
 def test_android_meson_toolchain_cross_compiling(arch, expected_arch):
     profile_host = textwrap.dedent("""
