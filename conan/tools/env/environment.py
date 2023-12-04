@@ -347,7 +347,7 @@ class EnvVars:
         :param name: The name of the environment variable.
         :param default: The returned value if the variable doesn't exist, by default None.
         :param variable_reference: if specified, use a variable reference instead of the
-                                   pre-existing value of environment variable, where {name}
+                                   preexisting value of environment variable, where {name}
                                    can be used to refer to the name of the variable.
         """
         v = self._values.get(name)
@@ -362,7 +362,7 @@ class EnvVars:
         """returns {str: str} (varname: value)
 
         :param variable_reference: if specified, use a variable reference instead of the
-                                   pre-existing value of environment variable, where {name}
+                                   preexisting value of environment variable, where {name}
                                    can be used to refer to the name of the variable.
         """
         if variable_reference:
