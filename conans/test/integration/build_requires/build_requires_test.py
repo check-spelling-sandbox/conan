@@ -189,7 +189,7 @@ nonexistingpattern*: SomeTool/1.2@user/channel
 """
 
 
-@pytest.mark.xfail(reason="Legacy tests with wrong propagation asumptions")
+@pytest.mark.xfail(reason="Legacy tests with wrong propagation assumptions")
 class BuildRequiresTest(unittest.TestCase):
 
     def test_consumer(self):
