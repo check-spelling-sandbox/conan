@@ -412,7 +412,7 @@ class TestUpdateFlows:
         self.client.assert_listed_require({"liba/1.2.0": "Downloaded (server2)"})
 
         # If we have multiple revisions with different names for the same version and we
-        # do a --update we are going to first resolver the version range agains server0
+        # do a --update we are going to first resolver the version range against server0
         # then in the proxy we will install rev2 that is the latest
         # | CLIENT         | CLIENT2        | SERVER0        | SERVER1        | SERVER2        |
         # |----------------|----------------|----------------|----------------|----------------|
