@@ -270,7 +270,7 @@ class TestConanDataUpdate:
 
 
 def test_conandata_trim():
-    """ test the explict trim_conandata() helper
+    """ test the explicit trim_conandata() helper
     """
     c = TestClient()
     conanfile = textwrap.dedent("""
