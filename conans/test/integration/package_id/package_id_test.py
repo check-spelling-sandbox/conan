@@ -47,7 +47,7 @@ def test_remove_option_setting():
     assert "pkg/0.1@user/testing: Package '%s' created" % NO_SETTINGS_PACKAGE_ID in client.out
 
 
-@pytest.mark.xfail(reason="Tests using the Search command are temporarely disabled")
+@pytest.mark.xfail(reason="Tests using the Search command are temporarily disabled")
 def test_value_parse():
     # https://github.com/conan-io/conan/issues/2816
     conanfile = textwrap.dedent("""
