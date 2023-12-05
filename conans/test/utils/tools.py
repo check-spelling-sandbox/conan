@@ -600,7 +600,7 @@ class TestClient(object):
             raise Exception(exc_message)
 
     def save(self, files, path=None, clean_first=False):
-        """ helper metod, will store files in the current folder
+        """ helper method, will store files in the current folder
         param files: dict{filename: filecontents}
         """
         path = path or self.current_folder
