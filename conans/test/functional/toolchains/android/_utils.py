@@ -15,7 +15,7 @@ lib_cpp = textwrap.dedent("""
 """)
 
 cmakelists = textwrap.dedent("""
-    cmake_minimum_required(VERSION 2.8.12)  # TODO: Define minimun required here
+    cmake_minimum_required(VERSION 2.8.12)  # TODO: Define minimum required here
     project(AndroidLibrary CXX)
 
     add_library(library lib.h lib.cpp)
