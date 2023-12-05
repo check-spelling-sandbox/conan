@@ -328,7 +328,7 @@ def test_makedeps_with_test_requires():
 
 def test_makedeps_with_editable_layout():
     """
-    The MakeDeps should be supported with editable layour mode
+    The MakeDeps should be supported with editable layout mode
     """
     client = TestClient()
     dep = textwrap.dedent("""
