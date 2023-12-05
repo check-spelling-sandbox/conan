@@ -5,7 +5,7 @@ from conans.test.utils.tools import TestClient
 
 
 def test_require_different_versions():
-    """ this test demostrates that it is possible to tool_require different versions
+    """ this test demonstrates that it is possible to tool_require different versions
     of the same thing, deactivating run=False (as long as their executables are not called the same)
 
     https://github.com/conan-io/conan/issues/13521
@@ -131,7 +131,7 @@ def test_require_different_versions_profile_override_build_script():
 
 
 def test_require_different_options():
-    """ this test demostrates that it is possible to tool_require different options
+    """ this test demonstrates that it is possible to tool_require different options
     of the same thing, deactivating run=False (as long as their executables are not called the same)
 
     https://github.com/conan-io/conan/issues/13521
