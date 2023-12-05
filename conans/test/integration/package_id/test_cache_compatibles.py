@@ -280,7 +280,7 @@ class TestDefaultCompat:
         assert "Installing packages" in client.out
 
     def test_check_min_cppstd(self):
-        """ test that the check_min_cppstd works fine wiht compatibility, as it is based
+        """ test that the check_min_cppstd works fine with compatibility, as it is based
         on ``conanfile.info.settings`` not ``conanfile.settings``
         """
         conanfile = textwrap.dedent("""
