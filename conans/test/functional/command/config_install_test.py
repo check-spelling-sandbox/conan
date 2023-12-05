@@ -419,8 +419,8 @@ class ConfigInstallTest(unittest.TestCase):
         self.assertEqual(_hide_password(url_with_credentials), url_hidden_password)
 
         # Check that it works with other protocols ftp
-        ftp_with_credentials = r"ftp://test_username_ftp:test_password_321@server.com/resurce.zip"
-        ftp_hidden_password = r"ftp://test_username_ftp:<hidden>@server.com/resurce.zip"
+        ftp_with_credentials = r"ftp://test_username_ftp:test_password_321@server.com/resource.zip"
+        ftp_hidden_password = r"ftp://test_username_ftp:<hidden>@server.com/resource.zip"
         self.assertEqual(_hide_password(ftp_with_credentials), ftp_hidden_password)
 
         # Check function also works for file paths *unix/windows
