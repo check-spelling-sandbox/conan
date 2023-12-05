@@ -136,7 +136,7 @@ class PackagesList:
         self.recipes = {}
 
     def add_refs(self, refs):
-        # RREVS alreday come in ASCENDING order, so upload does older revisions first
+        # RREVS already come in ASCENDING order, so upload does older revisions first
         for ref in refs:
             ref_dict = self.recipes.setdefault(str(ref), {})
             if ref.revision:
