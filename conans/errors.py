@@ -36,7 +36,7 @@ def conanfile_remove_attr(conanfile, names, method):
 @contextmanager
 def conanfile_exception_formatter(conanfile_name, func_name):
     """
-    Decorator to throw an exception formatted with the line of the conanfile where the error ocurrs.
+    Decorator to throw an exception formatted with the line of the conanfile where the error occurs.
     """
 
     def _raise_conanfile_exc(e):
