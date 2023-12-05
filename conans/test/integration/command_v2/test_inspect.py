@@ -113,7 +113,7 @@ def test_basic_new_inspect():
     tc.run("inspect . -f json")
 
 
-def test_requiremens_inspect():
+def test_requirements_inspect():
     tc = TestClient()
     conanfile = textwrap.dedent("""
     from conan import ConanFile
