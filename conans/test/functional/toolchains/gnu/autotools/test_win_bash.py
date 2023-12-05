@@ -72,7 +72,7 @@ def test_autotools_bash_complete():
 @pytest.mark.skipif(platform.system() != "Windows", reason="Requires Windows")
 def test_add_msys2_path_automatically():
     """ Check that commands like ar, autoconf, etc, that are in the /usr/bin folder together
-    with the bash.exe, can be automaticallly used when running in windows bash, without user
+    with the bash.exe, can be automatically used when running in windows bash, without user
     extra addition to [buildenv] of that msys64/usr/bin path
 
     # https://github.com/conan-io/conan/issues/12110
