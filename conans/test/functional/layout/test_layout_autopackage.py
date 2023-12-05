@@ -128,7 +128,7 @@ def test_auto_package_no_components():
     # Check files build
     assert os.path.exists(p_path("my_sources/build_stuff.cpp"))
     # note: as the "selective_stuff.cpp" is included in another my_sources dir, is copied twice
-    #       it would need manual adjustement of the copy to avoid it
+    #       it would need manual adjustment of the copy to avoid it
     assert os.path.exists(p_path("my_sources/selective_stuff.cpp"))
     assert os.path.exists(p_path("my_sources/subdir/othersubdir/selective_stuff.cpp"))
 
