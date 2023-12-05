@@ -5,7 +5,7 @@ import pytest
 from conans.util import encrypt
 
 
-def test_encryp_basic():
+def test_encrypt_basic():
     key = str(uuid.uuid4())
     message = 'simple data ascii string'
 
