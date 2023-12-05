@@ -164,7 +164,7 @@ class TestDownloadCacheBackupSources:
         # It has an excluded url, but another that is not, it should be there
         assert duplicated1_sha256 in server_contents
         assert duplicated1_sha256 + ".json" in server_contents
-        # All its urls are excluded, it shoud not be there
+        # All its urls are excluded, it should not be there
         assert duplicated2_sha256 not in server_contents
         assert duplicated2_sha256 + ".json" not in server_contents
 

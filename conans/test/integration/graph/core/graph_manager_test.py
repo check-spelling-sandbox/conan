@@ -600,7 +600,7 @@ class TestLinearFourLevels(GraphManagerTest):
                            ("shared-library", )])
     def test_libraries_transitive_headers(self, library_type):
         # app -> libc/0.1 -> libb0.1  -> liba0.1
-        # All with transitive_headers, the final application shoud get all headers
+        # All with transitive_headers, the final application should get all headers
         # https://github.com/conan-io/conan/issues/12504
         self.recipe_conanfile("liba/0.1", GenConanfile().with_package_type(library_type))
         self.recipe_conanfile("libb/0.1",

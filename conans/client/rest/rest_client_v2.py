@@ -281,7 +281,7 @@ class RestV2Methods(RestCommonMethods):
             remote_refs.append(_tmp)
 
         if ref.revision:  # FIXME: This is a bit messy, is it checking the existence? or getting the time? or both?
-            assert "This shoudln't be happening, get_recipe_revisions_references"
+            assert "This shouldn't be happening, get_recipe_revisions_references"
         return remote_refs
 
     def get_latest_recipe_reference(self, ref):

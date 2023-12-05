@@ -123,7 +123,7 @@ def get_cache_packages_binary_info(cache, prefs) -> Dict[PkgReference, dict]:
 
         info = load_binary_info(conan_info_content)
         pref = pkg_layout.reference
-        # The key shoudln't have the latest package revision, we are asking for package configs
+        # The key shouldn't have the latest package revision, we are asking for package configs
         pref.revision = None
         result[pkg_layout.reference] = info
 

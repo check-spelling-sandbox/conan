@@ -51,7 +51,7 @@ def test_info(client):
 
 
 def test_info_editable():
-    """ graph info for editable shouldn't crash, but it also shoudn't do anything
+    """ graph info for editable shouldn't crash, but it also shouldn't do anything
     # https://github.com/conan-io/conan/issues/15003
     """
     c = TestClient()

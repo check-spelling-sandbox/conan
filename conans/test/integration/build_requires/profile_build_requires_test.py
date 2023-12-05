@@ -230,7 +230,7 @@ def test_consumer_patterns_loop_error():
 
 
 def test_tool_requires_revision_profile():
-    # We shoul be able to explicitly [tool_require] a recipe revision in the profile
+    # We should be able to explicitly [tool_require] a recipe revision in the profile
     c = TestClient()
     build_profile = textwrap.dedent("""\
         [tool_requires]
