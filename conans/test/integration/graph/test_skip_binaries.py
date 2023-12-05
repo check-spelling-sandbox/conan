@@ -103,7 +103,7 @@ def test_build_scripts_no_skip():
 def test_list_skip_printing():
     """ make sure that when a package is required in the graph, it is not marked as SKIP, just
     because some other part of the graph is skipping it. In this case, a tool_require might be
-    necessary for some packages building from soures, but not for others
+    necessary for some packages building from sources, but not for others
     """
     c = TestClient()
     c.save({"tool/conanfile.py": GenConanfile("tool", "0.1"),

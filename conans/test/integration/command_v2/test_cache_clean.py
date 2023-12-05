@@ -7,7 +7,7 @@ from conans.test.utils.tools import TestClient
 def test_cache_clean():
     c = TestClient(default_server_user=True)
     c.save({"conanfile.py": GenConanfile("pkg", "0.1").with_exports("*").with_exports_sources("*"),
-            "sorces/file.txt": ""})
+            "sources/file.txt": ""})
     c.run("create .")
     ref_layout = c.exported_layout()
     pkg_layout = c.created_layout()
