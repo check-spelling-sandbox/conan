@@ -33,7 +33,7 @@ def create_local_git_repo(files=None, branch=None, submodules=None, folder=None,
 
     _run("add .", tmp)
     for i in range(0, commits):
-        _run('commit --allow-empty -m "commiting"', tmp)
+        _run('commit --allow-empty -m "committing"', tmp)
 
     tags = tags or []
     for tag in tags:
