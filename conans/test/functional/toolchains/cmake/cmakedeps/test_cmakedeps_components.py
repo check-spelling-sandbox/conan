@@ -162,7 +162,7 @@ def test_unused_tool_requirement(top_conanfile):
 
 # TODO: This is CMakeDeps Independent, move it out of here
 def test_wrong_requirement(top_conanfile):
-    """ If we require a wrong requirement, we get a meaninful error.
+    """ If we require a wrong requirement, we get a meaningful error.
         This error is known when creating the package if the requirement is not there.
     """
     consumer = textwrap.dedent("""
