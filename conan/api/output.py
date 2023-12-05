@@ -74,7 +74,7 @@ class ConanOutput:
         try:
             level = {"quiet": LEVEL_QUIET,  # -vquiet 80
                      "error": LEVEL_ERROR,  # -verror 70
-                     "warning": LEVEL_WARNING,  # -vwaring 60
+                     "warning": LEVEL_WARNING,  # -vwarning 60
                      "notice": LEVEL_NOTICE,  # -vnotice 50
                      "status": LEVEL_STATUS,  # -vstatus 40
                      None: LEVEL_VERBOSE,  # -v 30
