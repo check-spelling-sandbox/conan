@@ -118,10 +118,10 @@ def _check_tested_reference_matches(deps_graph, tested_ref, out):
     # https://github.com/conan-io/conan/issues/10453
     direct_refs = [n.conanfile.ref for n in deps_graph.root.neighbors()]
     # There is a reference with same name but different
-    missmatch = [ref for ref in direct_refs if ref.name == tested_ref.name and ref != tested_ref]
-    if missmatch:
+    mismatch = [ref for ref in direct_refs if ref.name == tested_ref.name and ref != tested_ref]
+    if mismatch:
         out.warning("The package created was '{}' but the reference being "
-                    "tested is '{}'".format(missmatch[0], tested_ref))
+                    "tested is '{}'".format(mismatch[0], tested_ref))
 
 
 def test_package(conan_api, deps_graph, test_conanfile_path, tested_python_requires=None):
