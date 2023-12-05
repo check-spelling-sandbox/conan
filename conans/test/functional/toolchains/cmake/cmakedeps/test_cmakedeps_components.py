@@ -157,7 +157,7 @@ def test_unused_tool_requirement(top_conanfile):
     t.run('create top.py --name=top --version=version')
     t.run('create top.py --name=top2 --version=version')
     t.run('create consumer.py --name=wrong --version=version')
-    # This runs without crashing, because it is not chcking that top::other doesn't exist
+    # This runs without crashing, because it is not checking that top::other doesn't exist
 
 
 # TODO: This is CMakeDeps Independent, move it out of here
