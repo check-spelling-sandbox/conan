@@ -121,7 +121,7 @@ class RemoteManager(object):
 
     def get_package_metadata(self, pref, remote, metadata):
         """
-        only download the metadata, not the packge itself
+        only download the metadata, not the package itself
         """
         output = ConanOutput(scope=str(pref.ref))
         output.info("Retrieving package metadata %s from remote '%s' "

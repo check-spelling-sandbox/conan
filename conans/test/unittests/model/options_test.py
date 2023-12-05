@@ -434,7 +434,7 @@ class OptionsValuesPropagationUpstreamNone(unittest.TestCase):
                                                 ("whatever.*:opt", "None"),
                                                 ])
 
-    def test_propagate_in_pacakge_options(self):
+    def test_propagate_in_package_options(self):
         package_options = Options.create_options({"opt": [None, "a", "b"]}, None)
         package_options.propagate_upstream({'opt': None}, None, None, [])
         self.assertEqual(package_options.values.items(), [('opt', 'None'), ])

@@ -211,7 +211,7 @@ class TestValidate(unittest.TestCase):
         client.run("create . --name=pkg --version=0.1 -s os=Linux -s build_type=Release")
         package_id = "c26ded3c7aa4408e7271e458d65421000e000711"
         client.assert_listed_binary({"pkg/0.1": (package_id, "Build")})
-        # compatible_packges fallback works
+        # compatible_packages fallback works
         client.run("install --requires=pkg/0.1@ -s os=Linux -s build_type=Debug")
         client.assert_listed_binary({"pkg/0.1": (package_id, "Cache")})
 
@@ -247,7 +247,7 @@ class TestValidate(unittest.TestCase):
         client.run("create . --name=pkg --version=0.1 -s os=Linux -s build_type=Release")
         self.assertIn(f"pkg/0.1: Package '{package_id}' created",
                       client.out)
-        # compatible_packges fallback works
+        # compatible_packages fallback works
         client.run("install --requires=pkg/0.1@ -s os=Linux -s build_type=Debug")
         client.assert_listed_binary({"pkg/0.1": (package_id, "Cache")})
         # Windows invalid configuration
