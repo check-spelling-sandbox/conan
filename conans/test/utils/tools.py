@@ -855,7 +855,7 @@ class TurboTestClient(TestClient):
             self.save({"conanfile.py": conanfile})
         self.run("export-pkg . {} {}".format(repr(ref),  args or ""),
                  assert_error=assert_error)
-        # FIXME: What is this line? rrev is not used, is it checking existance or something?
+        # FIXME: What is this line? rrev is not used, is it checking existence or something?
         rrev = self.cache.get_latest_recipe_reference(ref)
 
         if assert_error:

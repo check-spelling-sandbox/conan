@@ -280,7 +280,7 @@ class RestV2Methods(RestCommonMethods):
             _tmp.timestamp = from_iso8601_to_timestamp(item.get("time"))
             remote_refs.append(_tmp)
 
-        if ref.revision:  # FIXME: This is a bit messy, is it checking the existance? or getting the time? or both?
+        if ref.revision:  # FIXME: This is a bit messy, is it checking the existence? or getting the time? or both?
             assert "This shoudln't be happening, get_recipe_revisions_references"
         return remote_refs
 
@@ -298,7 +298,7 @@ class RestV2Methods(RestCommonMethods):
         remote_prefs = [PkgReference(pref.ref, pref.package_id, item.get("revision"),
                         from_iso8601_to_timestamp(item.get("time"))) for item in tmp]
 
-        if pref.revision:  # FIXME: This is a bit messy, is it checking the existance? or getting the time? or both?
+        if pref.revision:  # FIXME: This is a bit messy, is it checking the existence? or getting the time? or both?
             for _pref in remote_prefs:
                 if _pref.revision == pref.revision:
                     return [_pref]
