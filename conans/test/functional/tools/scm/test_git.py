@@ -74,7 +74,7 @@ class TestGitBasicCapture:
         c = TestClient()
         c.run_command('git clone "{}" myclone'.format(url))
         with c.chdir("myclone"):
-            c.save({"conanfile.py": self.conanfile + "\n# some coment!"})
+            c.save({"conanfile.py": self.conanfile + "\n# some comment!"})
             new_commit = git_add_changes_commit(c.current_folder)
 
             c.run("export .")
@@ -150,7 +150,7 @@ class TestGitCaptureSCM:
         c = TestClient()
         c.run_command('git clone "{}" myclone'.format(url))
         with c.chdir("myclone"):
-            c.save({"conanfile.py": self.conanfile + "\n# some coment!"})
+            c.save({"conanfile.py": self.conanfile + "\n# some comment!"})
             new_commit = git_add_changes_commit(c.current_folder)
 
             c.run("export .")
@@ -953,7 +953,7 @@ class TestGitShallowTagClone:
         # Do a shallow clone of our tag
         c.run_command('git clone --depth=1 --branch 1.0.0 "{}" myclone'.format(folder))
         with c.chdir("myclone"):
-            c.save({"conanfile.py": self.conanfile + "\n# some coment!"})
+            c.save({"conanfile.py": self.conanfile + "\n# some comment!"})
             new_commit = git_add_changes_commit(c.current_folder)
 
             c.run("export .")
