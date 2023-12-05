@@ -95,7 +95,7 @@ def test_cppstd():
 
 def test_cppstd_validated():
     """ this test proves that 1 only configuration, the latest one, is tested and compatible,
-    because the ``valiate()`` method is rejecting all cppstd<20
+    because the ``validate()`` method is rejecting all cppstd<20
     """
     client = TestClient()
     compatibles = textwrap.dedent("""\
