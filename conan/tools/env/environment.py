@@ -22,7 +22,7 @@ def environment_wrap_command(env_filenames, env_folder, cmd, subsystem=None,
     bats, shs, ps1s = [], [], []
 
     accept = accepted_extensions or ("ps1", "bat", "sh")
-    # TODO: This implemantation is dirty, improve it
+    # TODO: This implementation is dirty, improve it
     for f in filenames:
         f = f if os.path.isabs(f) else os.path.join(env_folder, f)
         if f.lower().endswith(".sh"):
