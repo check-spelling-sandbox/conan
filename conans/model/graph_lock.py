@@ -154,7 +154,7 @@ class Lockfile(object):
 
     def add(self, requires=None, build_requires=None, python_requires=None):
         """ adding new things manually will trigger the sort() of the locked list, so lockfiles
-        alwasys keep the ordered lists. This means that for some especial edge cases it might
+        always keep the ordered lists. This means that for some especial edge cases it might
         be necessary to allow removing from a lockfile, for example to test an older version
         than the one locked (in general adding works better for moving forward to newer versions)
         """
