@@ -1,4 +1,4 @@
-# All harcoded (names, paths etc), refactor it if needed
+# All hardcoded (names, paths etc), refactor it if needed
 
 sln_file = '''
 Microsoft Visual Studio Solution File, Format Version 12.00
