@@ -248,7 +248,7 @@ class TestEditables:
         c.run("editable add pkg --name=pkg --version=0.1")
         # TODO: Check this --package-filter with *
         c.run("graph info consumer --package-filter=pkg*")
-        # FIXME: Paths are not diplayed yet
+        # FIXME: Paths are not displayed yet
         assert "source_folder: None" in c.out
 
 
