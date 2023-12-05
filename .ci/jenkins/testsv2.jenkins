@@ -160,14 +160,14 @@ private Closure runTests(String nodeName, String pythonVersion, String module) {
 
 void runTestsModule(String moduleName, String branchName, String jobName) {
     def configs = getConfigurations(moduleName, branchName, jobName)
-    def paralellRuns = [:]
+    def parallelRuns = [:]
     configs.each { config ->
         def testKind = moduleName.split("/").last()
         config["pyvers"].each { pyver ->
-            paralellRuns["${testKind} - ${config['node']} - ${pyver}"] = runTests(config["node"], pyver, moduleName)
+            parallelRuns["${testKind} - ${config['node']} - ${pyver}"] = runTests(config["node"], pyver, moduleName)
         }
     }
-    parallel(paralellRuns)
+    parallel(parallelRuns)
 }
 
 def testModules = ["conans/test/unittests", "conans/test/integration", "conans/test/functional"]
