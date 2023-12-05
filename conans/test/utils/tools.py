@@ -258,7 +258,7 @@ class TestServer(object):
              'users':  {username: plain-text-passwd}
         """
         # Unique identifier for this server, will be used by TestRequester
-        # to determine where to call. Why? remote_manager just assing an url
+        # to determine where to call. Why? remote_manager just passing an url
         # to the rest_client, so rest_client doesn't know about object instances,
         # just urls, so testing framework performs a map between fake urls and instances
         if read_permissions is None:
