@@ -130,7 +130,7 @@ def _ask_confirm_upload(conan_api, package_list):
         ref_dict = package_list.recipes[str(ref)]["revisions"]
         if not ui.request_boolean(msg):
             ref_dict.pop(ref.revision)
-            # clean up empy refs
+            # clean up empty refs
             if not ref_dict:
                 package_list.recipes.pop(str(ref))
         else:
