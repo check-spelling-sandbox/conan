@@ -26,7 +26,7 @@ class XcodeToolchain(object):
         {ldflags}
         """)
 
-    _agreggated_xconfig = textwrap.dedent("""\
+    _aggregated_xconfig = textwrap.dedent("""\
         // Conan XcodeToolchain generated file
         // Includes all installed configurations
 
@@ -48,7 +48,7 @@ class XcodeToolchain(object):
 
     def generate(self):
         check_duplicated_generator(self, self._conanfile)
-        save(self._agreggated_xconfig_filename, self._agreggated_xconfig_content)
+        save(self._aggregated_xconfig_filename, self._aggregated_xconfig_content)
         save(self._vars_xconfig_filename, self._vars_xconfig_content)
         if self._check_if_extra_flags:
             save(self._flags_xcconfig_filename, self._flags_xcconfig_content)
@@ -89,14 +89,14 @@ class XcodeToolchain(object):
         return ret
 
     @property
-    def _agreggated_xconfig_content(self):
-        return _add_includes_to_file_or_create(self._agreggated_xconfig_filename,
-                                               self._agreggated_xconfig,
+    def _aggregated_xconfig_content(self):
+        return _add_includes_to_file_or_create(self._aggregated_xconfig_filename,
+                                               self._aggregated_xconfig,
                                                [self._vars_xconfig_filename])
 
     @property
     def _global_xconfig_content(self):
-        files_to_include = [self._agreggated_xconfig_filename]
+        files_to_include = [self._aggregated_xconfig_filename]
         if self._check_if_extra_flags:
             files_to_include.append(self._flags_xcconfig_filename)
         content = _add_includes_to_file_or_create(GLOBAL_XCCONFIG_FILENAME, GLOBAL_XCCONFIG_TEMPLATE,
@@ -104,7 +104,7 @@ class XcodeToolchain(object):
         return content
 
     @property
-    def _agreggated_xconfig_filename(self):
+    def _aggregated_xconfig_filename(self):
         return self.filename + self.extension
 
     @property
