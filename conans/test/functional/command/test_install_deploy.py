@@ -43,7 +43,7 @@ def _client():
 
 @pytest.fixture()
 def client(_client):
-    """ this is much faster than creating and uploading everythin
+    """ this is much faster than creating and uploading everything
     """
     client = TestClient(default_server_user=True)
     shutil.rmtree(client.cache_folder)

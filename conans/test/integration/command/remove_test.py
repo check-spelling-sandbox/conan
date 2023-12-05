@@ -213,7 +213,7 @@ def _populated_client_base():
 
 @pytest.fixture()
 def populated_client(_populated_client_base):
-    """ this is much faster than creating and uploading everythin
+    """ this is much faster than creating and uploading everything
     """
     client = TestClient(default_server_user=True)
     shutil.rmtree(client.cache_folder)
