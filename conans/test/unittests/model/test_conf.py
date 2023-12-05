@@ -160,7 +160,7 @@ def test_conf_list_operations_fails_with_wrong_types(text1, text2):
 
 def test_compose_conf_complex():
     """
-    Testing the composition between several ConfDefiniton objects and with
+    Testing the composition between several ConfDefinition objects and with
     different value types
     """
     text = textwrap.dedent("""\
