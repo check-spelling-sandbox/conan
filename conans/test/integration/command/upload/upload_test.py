@@ -46,7 +46,7 @@ class UploadTest(unittest.TestCase):
         assert "Remove it with 'conan remove hello/0.1:da39a3ee5e6b4b0d3255bfef95601890afd80709" \
                in client.out
 
-        # Test that removeing the binary allows moving forward
+        # Test that removing the binary allows moving forward
         client.run("remove hello/0.1:da39a3ee5e6b4b0d3255bfef95601890afd80709 -c")
         client.run("upload * -r=default --confirm")
 
