@@ -64,7 +64,7 @@ class CacheAPI:
         return ref_layout.package()
 
     def check_integrity(self, package_list):
-        """Check if the recipes and packages are corrupted (it will raise a ConanExcepcion)"""
+        """Check if the recipes and packages are corrupted (it will raise a ConanException)"""
         app = ConanApp(self.conan_api.cache_folder, self.conan_api.config.global_conf)
         checker = IntegrityChecker(app)
         checker.check(package_list)
