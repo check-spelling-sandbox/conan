@@ -99,7 +99,7 @@ def test_install_deploy(client, powershell):
             cmd = r"powershell.exe mydeploy\conanrun.ps1 ; Release\my_app.exe"
         else:
             cmd = r"mydeploy\conanrun.bat && Release\my_app.exe"
-        # For Lunux: cmd = ". mydeploy/conanrun.sh && ./my_app"
+        # For Linux: cmd = ". mydeploy/conanrun.sh && ./my_app"
         c2.run_command(cmd)
         assert "hello/0.1: Hello World Release!" in c2.out
 
@@ -149,7 +149,7 @@ def test_install_full_deploy_layout(client):
         c2.run_command("cmake --build . --config Release")
         if platform.system() == "Windows":  # Only the .bat env-generators are relocatable atm
             cmd = r"generators\conanrun.bat && Release\my_app.exe"
-            # For Lunux: cmd = ". mydeploy/conanrun.sh && ./my_app"
+            # For Linux: cmd = ". mydeploy/conanrun.sh && ./my_app"
             c2.run_command(cmd)
             assert "hello/0.1: Hello World Release!" in c2.out
 
