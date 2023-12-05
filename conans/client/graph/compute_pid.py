@@ -64,7 +64,7 @@ def compute_package_id(node, new_config):
     run_validate_package_id(conanfile)
 
     if conanfile.info.settings_target:
-        # settings_target has beed added to conan package via package_id api
+        # settings_target has been added to conan package via package_id api
         conanfile.original_info.settings_target = conanfile.info.settings_target
 
     info = conanfile.info
