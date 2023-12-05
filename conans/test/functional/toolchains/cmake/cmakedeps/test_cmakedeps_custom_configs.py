@@ -237,7 +237,7 @@ def test_changing_build_type():
                  "CMakeLists.txt": cmakelists,
                  "app.cpp": app}, clean_first=True)
 
-    # in MSVC multi-config -s pkg/*:build_type=Debug is not really necesary, toolchain do nothing
+    # in MSVC multi-config -s pkg/*:build_type=Debug is not really necessary, toolchain do nothing
     # TODO: Challenge how to define consumer build_type for conanfile.txt
     client.run("install . -s pkg*:build_type=Debug -s build_type=Release")
     client.run_command("cmake . -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug")

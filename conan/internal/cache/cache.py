@@ -195,7 +195,7 @@ class DataCache:
             pkg_layout.remove()
             shutil.move(layout.base_folder, pkg_layout.base_folder)  # clean unused temporary build
             layout._base_folder = pkg_layout.base_folder  # reuse existing one
-            # TODO: The relpath would be the same as the previous one, it shouldn't be ncessary to
+            # TODO: The relpath would be the same as the previous one, it shouldn't be necessary to
             #  update it, the update_package_timestamp() can be simplified and path dropped
             relpath = os.path.relpath(layout.base_folder, self._base_folder)
             self._db.update_package_timestamp(pref, path=relpath, build_id=build_id)
