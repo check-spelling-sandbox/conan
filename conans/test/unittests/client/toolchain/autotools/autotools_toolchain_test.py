@@ -330,7 +330,7 @@ def test_apple_min_os_flag():
 
 def test_crossbuild_from_macos_to_non_apple_os():
     """Check we are not adding Apple-specific flags
-        when the os_build is Macos, but we are targetting
+        when the os_build is Macos, but we are targeting
         a non-Apple OS (e.g. Linux, Android, QNX)"""
     conanfile = ConanFileMock()
     conanfile.settings = MockSettings({"os": "Android", "arch": "armv8"})
