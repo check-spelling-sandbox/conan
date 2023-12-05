@@ -74,7 +74,7 @@ def _windows_bash_wrapper(conanfile, command, env, envfiles_folder):
                              "needed to run commands in a Windows subsystem")
     env = env or []
     if subsystem == MSYS2:
-        # Configure MSYS2 to inherith the PATH
+        # Configure MSYS2 to inherit the PATH
         msys2_mode_env = Environment()
         _msystem = {"x86": "MINGW32"}.get(conanfile.settings.get_safe("arch"), "MINGW64")
         # https://www.msys2.org/wiki/Launchers/ dictates that the shell should be launched with
