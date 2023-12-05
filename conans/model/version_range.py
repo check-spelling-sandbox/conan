@@ -174,7 +174,7 @@ class VersionRange:
 
         :param version: Version to check against
         :param resolve_prerelease: If ``True``, ensure prereleases can be resolved in this range
-        If ``False``, prerelases can NOT be resolved in this range
+        If ``False``, prereleases can NOT be resolved in this range
         If ``None``, prereleases are resolved only if this version range expression says so
         :return: Whether the version is inside the range
         """
