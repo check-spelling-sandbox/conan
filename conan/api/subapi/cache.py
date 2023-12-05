@@ -76,7 +76,7 @@ class CacheAPI:
         :param package_list: the package lists that should be cleaned
         :param source: boolean, remove the "source" folder if True
         :param build: boolean, remove the "build" folder if True
-        :param download: boolen, remove the "download (.tgz)" folder if True
+        :param download: boolean, remove the "download (.tgz)" folder if True
         :param temp: boolean, remove the temporary folders
         :return:
         """
