@@ -370,7 +370,7 @@ def test_folder_output():
 
 def test_removing_test_package_build_folder():
     """ The test_package could crash if not cleaning correctly the test_package
-    output folder. This will still crassh if the layout is not creating different build folders
+    output folder. This will still crash if the layout is not creating different build folders
     """
     client = TestClient()
     test_package = textwrap.dedent("""

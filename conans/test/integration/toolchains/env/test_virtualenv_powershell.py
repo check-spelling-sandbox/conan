@@ -73,7 +73,7 @@ def test_virtualenv(client):
 @pytest.mark.skipif(platform.system() != "Windows", reason="Requires Windows powershell")
 def test_virtualenv_test_package():
     """ The test_package could crash if not cleaning correctly the test_package
-    output folder. This will still crassh if the layout is not creating different build folders
+    output folder. This will still crash if the layout is not creating different build folders
     https://github.com/conan-io/conan/issues/12764
     """
     client = TestClient()
