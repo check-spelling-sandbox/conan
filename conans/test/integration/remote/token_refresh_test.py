@@ -59,7 +59,7 @@ class RequesterWithTokenMock(object):
         if url.endswith("files"):
             return ResponseDownloadURLs()
         elif url.endswith("users/authenticate"):
-            raise Exception("This endpoint should't be called when oauth supported")
+            raise Exception("This endpoint shouldn't be called when oauth supported")
 
     def post(self, url, **kwargs):
         """If the call is to refresh we return "refreshed_access_token" otherwise we return
@@ -70,7 +70,7 @@ class RequesterWithTokenMock(object):
                 return ResponseWithTokenMock("refreshed_access_token")
             return ResponseWithTokenMock("access_token")
         else:
-            raise Exception("This endpoint should't be reached")
+            raise Exception("This endpoint shouldn't be reached")
 
 
 class TestTokenRefresh(unittest.TestCase):
