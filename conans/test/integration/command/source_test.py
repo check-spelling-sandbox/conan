@@ -210,7 +210,7 @@ class ConanLib(ConanFile):
 
     def test_source_method_called_again_if_left_dirty(self):
         """
-        If we fail in retreiving sources make sure the source() method will be called
+        If we fail in retrieving sources make sure the source() method will be called
         next time we create
         """
 
