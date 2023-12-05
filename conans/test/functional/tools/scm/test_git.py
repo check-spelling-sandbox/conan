@@ -129,7 +129,7 @@ class TestGitCaptureSCM:
 
     def test_capture_remote_url(self):
         """
-        a cloned repo that is expored, will report the URL of the remote
+        a cloned repo that is exported, will report the URL of the remote
         """
         folder = temp_folder()
         url, commit = create_local_git_repo(files={"conanfile.py": self.conanfile}, folder=folder)
