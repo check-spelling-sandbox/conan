@@ -188,7 +188,7 @@ class AuthorizerTest(unittest.TestCase):
         for u in ['user1','user2','user3']:
             authorizer.check_read_conan(u, self.openssl_ref)
 
-        # Spaces bewteen user names should be ignored
+        # Spaces between user names should be ignored
         read_perms = [("openssl/*@lasote/testing", "user1 , user2,\tuser3")]
         authorizer = BasicAuthorizer(read_perms, [])
         for u in ['user1','user2','user3']:
