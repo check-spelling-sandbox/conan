@@ -23,7 +23,7 @@ class _InstallPackageReference:
         self.nodes = []  # GraphNode
         self.binary = None  # The action BINARY_DOWNLOAD, etc must be the same for all nodes
         self.context = None  # Same PREF could be in both contexts, but only 1 context is enough to
-        # be able to reproduce, typically host preferrably
+        # be able to reproduce, typically host preferably
         self.options = []  # to be able to fire a build, the options will be necessary
         self.filenames = []  # The build_order.json filenames e.g. "windows_build_order"
         # If some package, like ICU, requires itself, built for the "build" context architecture
