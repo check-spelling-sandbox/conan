@@ -71,7 +71,7 @@ def test_virtualenv_deactivated(client, win_bash):
 def test_nowinbash(client):
     """ whe the recipe doesn't define win_bash=True 2 things can happen:
     - No need to run in bash, things will run in normal command, with .bat
-    - You run directly in a subsytem terminal a recipe that was not aware of that, still the
+    - You run directly in a subsystem terminal a recipe that was not aware of that, still the
        files need to follow the subsystem
     """
     conanfile = str(GenConanfile().with_settings("os")

@@ -13,7 +13,7 @@ Potential scenarios:
   - Targeting Subsystem (os.subsystem = msys2/cygwin)
     - Always builds and runs in bash (tools.microsoft.bash:path)
 
-- Running from a subsytem terminal (tools.microsoft.bash:subsystem=xxx,
+- Running from a subsystem terminal (tools.microsoft.bash:subsystem=xxx,
                                     tools.microsoft.bash:path=None) NO ERROR mode for not specifying it? =CURRENT?
   - Targeting Windows native (os.subsystem = None)
   - Targeting Subsystem (os.subsystem = msys2/cygwin)

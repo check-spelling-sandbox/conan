@@ -77,7 +77,7 @@ class ConanFile:
 
     def __init__(self, display_name=""):
         self.display_name = display_name
-        # something that can run commands, as os.sytem
+        # something that can run commands, as os.system
 
         self._conan_helpers = None
         from conan.tools.env import Environment
