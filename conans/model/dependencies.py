@@ -151,7 +151,7 @@ class ConanFileDependencies(UserRequirementsDict):
 
 
 def get_transitive_requires(consumer, dependency):
-    """ the transitive requires that we need are the consumer ones, not the current dependencey
+    """ the transitive requires that we need are the consumer ones, not the current dependency
     ones, so we get the current ones, then look for them in the consumer, and return those
     """
     pkg_deps = dependency.dependencies.filter({"direct": True})
