@@ -112,7 +112,7 @@ def test_cpp_info_component_objects():
                      $<$<CONFIG:Release>:${hello_hello_say_OBJECTS_RELEASE}>
                      $<$<CONFIG:Release>:${hello_hello_say_LIBRARIES_TARGETS}>
                      APPEND)""" in content
-        # If there are componets, there is not a global cpp so this is not generated
+        # If there are components, there is not a global cpp so this is not generated
         assert "hello_OBJECTS_RELEASE" not in content
         # But the global target is linked with the targets from the components
         assert "set_property(TARGET hello::hello PROPERTY INTERFACE_LINK_LIBRARIES " \
