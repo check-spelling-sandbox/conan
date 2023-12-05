@@ -24,7 +24,7 @@ def test_make_dirs_with_abs_path():
             def package_info(self):
                 self.cpp_info.frameworkdirs = []
                 libname = "mylib"
-                fake_dir = os.path.join("/", "my_absoulte_path", "fake")
+                fake_dir = os.path.join("/", "my_absolute_path", "fake")
                 include_dir = os.path.join(fake_dir, libname, "include")
                 lib_dir = os.path.join(fake_dir, libname, "lib")
                 lib_dir2 = os.path.join(self.package_folder, "lib2")
@@ -41,8 +41,8 @@ def test_make_dirs_with_abs_path():
     prefix = pathlib.Path(client.current_folder).drive if platform.system() == "Windows" else ""
     assert 'CONAN_NAME_MYLIB = mylib' in makefile_content
     assert 'CONAN_VERSION_MYLIB = 0.1' in makefile_content
-    assert f'CONAN_LIB_DIRS_MYLIB = \\\n\t$(CONAN_LIB_DIR_FLAG){prefix}/my_absoulte_path/fake/mylib/lib \\\n\t$(CONAN_LIB_DIR_FLAG)$(CONAN_ROOT_MYLIB)/lib2' in makefile_content
-    assert f'CONAN_INCLUDE_DIRS_MYLIB = $(CONAN_INCLUDE_DIR_FLAG){prefix}/my_absoulte_path/fake/mylib/include' in makefile_content
+    assert f'CONAN_LIB_DIRS_MYLIB = \\\n\t$(CONAN_LIB_DIR_FLAG){prefix}/my_absolute_path/fake/mylib/lib \\\n\t$(CONAN_LIB_DIR_FLAG)$(CONAN_ROOT_MYLIB)/lib2' in makefile_content
+    assert f'CONAN_INCLUDE_DIRS_MYLIB = $(CONAN_INCLUDE_DIR_FLAG){prefix}/my_absolute_path/fake/mylib/include' in makefile_content
     assert 'CONAN_BIN_DIRS_MYLIB = $(CONAN_BIN_DIR_FLAG)$(CONAN_ROOT_MYLIB)/bin' in makefile_content
 
     lines = makefile_content.splitlines()
@@ -51,7 +51,7 @@ def test_make_dirs_with_abs_path():
         if line.startswith(includedir_pattern):
             assert os.path.isabs(line[len(includedir_pattern):])
             assert line.endswith("include")
-        elif line.startswith("\t$(CONAN_LIB_DIRS_FLAG)") and 'my_absoulte_path' in line:
+        elif line.startswith("\t$(CONAN_LIB_DIRS_FLAG)") and 'my_absolute_path' in line:
             assert os.path.isabs(line[len("\t$(CONAN_LIB_DIRS_FLAG)"):-2])
             assert line.endswith("lib \\")
         elif line.startswith("\t$(CONAN_LIB_DIRS_FLAG)") and line.endswith('lib2'):

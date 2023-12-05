@@ -28,7 +28,7 @@ def test_pkg_config_dirs():
                 self.cpp_info.frameworkdirs = []
                 self.cpp_info.filter_empty = False
                 libname = "mylib"
-                fake_dir = os.path.join("/", "my_absoulte_path", "fake")
+                fake_dir = os.path.join("/", "my_absolute_path", "fake")
                 include_dir = os.path.join(fake_dir, libname, "include")
                 lib_dir = os.path.join(fake_dir, libname, "lib")
                 lib_dir1 = os.path.join(self.package_folder, "lib2")
