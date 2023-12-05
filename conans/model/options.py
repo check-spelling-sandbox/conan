@@ -347,7 +347,7 @@ class Options:
 
     def apply_downstream(self, down_options, profile_options, own_ref, is_consumer):
         """ compute the current package options, starting from the self defined ones and applying
-        the options defined by the downstrream consumers and the profile
+        the options defined by the downstream consumers and the profile
         Only modifies the current package_options, not the dependencies ones
         """
         assert isinstance(down_options, Options)
