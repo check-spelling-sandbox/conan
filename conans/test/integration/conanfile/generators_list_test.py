@@ -62,7 +62,7 @@ class ConanfileRepeatedGeneratorsTestCase(unittest.TestCase):
         t.run("install conanfile.py")
         self.assertEqual(str(t.out).count("Generator 'CMakeDeps' calling 'generate()'"), 1)
 
-    def test_duplicated_generator_in_member_and_attribue(self):
+    def test_duplicated_generator_in_member_and_attribute(self):
         """
         Ensure we raise an error when a generator is present both in the generators attribute
         and instanced in the generate() method by the user, which we didn't use to do before 2.0
