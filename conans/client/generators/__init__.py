@@ -34,7 +34,7 @@ def _get_generator_class(generator_name):
 
     try:
         generator_class = _generators[generator_name]
-        # This is identical to import ... form ... in terms of cacheing
+        # This is identical to import ... form ... in terms of caching
     except KeyError as e:
         raise ConanException(f"Invalid generator '{generator_name}'. "
                              f"Available types: {', '.join(_generators)}") from e
