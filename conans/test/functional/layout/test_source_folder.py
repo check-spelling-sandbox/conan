@@ -107,7 +107,7 @@ def test_zip_download_with_subfolder_new_tools(no_copy_source):
     will unzip in the base and will work both locally (conan build) or in the cache
     (exporting the sources)"""
 
-    tmp = TestClient()  # Used only to save some files, sorry for the lazyness
+    tmp = TestClient()  # Used only to save some files, sorry for the laziness
     cmake = gen_cmakelists(appname="my_app", appsources=["main.cpp"])
     app = gen_function_cpp(name="main")
     tmp.save({"subfolder/main.cpp": app,
