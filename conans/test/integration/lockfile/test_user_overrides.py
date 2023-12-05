@@ -41,7 +41,7 @@ def test_user_overrides():
 
 
 def test_user_build_overrides():
-    """ Test that it is possible to lock also build-requries
+    """ Test that it is possible to lock also build-requires
     """
     c = TestClient()
     c.save({"cmake/conanfile.py": GenConanfile("cmake"),
@@ -74,7 +74,7 @@ def test_user_build_overrides():
 
 
 def test_user_python_overrides():
-    """ Test that it is possible to lock also python-requries
+    """ Test that it is possible to lock also python-requires
     """
     c = TestClient()
     c.save({"pytool/conanfile.py": GenConanfile("pytool"),
