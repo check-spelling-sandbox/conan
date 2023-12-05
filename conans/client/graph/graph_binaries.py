@@ -261,7 +261,7 @@ class GraphBinariesAnalyzer(object):
         # If the CLI says this package needs to be built, it doesn't make sense to mark
         # it as invalid
         if self._evaluate_build(node, build_mode):
-            # TODO: We migth want to rais if strict
+            # TODO: We might want to rais if strict
             return
 
         if node.recipe == RECIPE_EDITABLE:
