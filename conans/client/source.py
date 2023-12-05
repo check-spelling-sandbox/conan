@@ -22,7 +22,7 @@ def _try_get_sources(ref, remote_manager, recipe_layout, remote):
 
 def retrieve_exports_sources(remote_manager, recipe_layout, conanfile, ref, remotes):
     """ the "exports_sources" sources are not retrieved unless necessary to build. In some
-    occassions, conan needs to get them too, like if uploading to a server, to keep the recipes
+    occasions, conan needs to get them too, like if uploading to a server, to keep the recipes
     complete
     """
     if conanfile.exports_sources is None and not hasattr(conanfile, "export_sources"):
