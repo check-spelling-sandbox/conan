@@ -753,7 +753,7 @@ def test_conditional_require_context():
 
 class TestBuildTrackHost:
 
-    def test_overriden_host_but_not_build(self):
+    def test_overridden_host_but_not_build(self):
         """
         Making the ``tool_requires(..., visible=True)`` works, and allows overriding, but
         propagates the build-requirement to protobuf/protoc down the graph, and VirtualBuildEnv
@@ -784,7 +784,7 @@ class TestBuildTrackHost:
         c.assert_listed_require({"protobuf/1.1": "Cache"})
         c.assert_listed_require({"protobuf/1.1": "Cache"}, build=True)
 
-    def test_overriden_host_version(self):
+    def test_overridden_host_version(self):
         """
         Make the tool_requires follow the regular require with the expression "<host_version>"
         """
@@ -820,7 +820,7 @@ class TestBuildTrackHost:
         c.run("install app --lockfile=app/conan.lock")
         c.assert_listed_require({"protobuf/1.1": "Cache"}, build=True)
 
-    def test_overriden_host_version_version_range(self):
+    def test_overridden_host_version_version_range(self):
         """
         same as above, but using version ranges instead of overrides
         """
@@ -946,7 +946,7 @@ class TestBuildTrackHost:
         c.assert_listed_binary({"protobuf/1.0": ("da39a3ee5e6b4b0d3255bfef95601890afd80709",
                                                  "Cache")}, build=True)
 
-    def test_overriden_host_version_transitive_deps(self):
+    def test_overridden_host_version_transitive_deps(self):
         """
         Make the tool_requires follow the regular require with the expression "<host_version>" for a transitive_deps
         """

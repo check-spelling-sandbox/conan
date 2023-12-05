@@ -183,7 +183,7 @@ def download(conanfile, url, filename, verify=True, retry=None, retry_wait=None,
     :param verify: When False, disables https certificate validation
     :param retry: Number of retries in case of failure. Default is overridden by
            "tools.files.download:retry" conf
-    :param retry_wait: Seconds to wait between download attempts. Default is overriden by
+    :param retry_wait: Seconds to wait between download attempts. Default is overridden by
            "tools.files.download:retry_wait" conf.
     :param auth: A tuple of user and password to use HTTPBasic authentication
     :param headers: A dictionary with additional headers

@@ -273,7 +273,7 @@ def test_graph_different_overrides():
     assert "toolc/0.1" in requires
 
     c.run("graph info toolb --build-require --version=0.1 --lockfile=pkgc/conan.lock --format=json")
-    # defaults to the non overriden
+    # defaults to the non overridden
     c.assert_listed_require({"toolc/0.1": "Cache"}, build=True)
     # TODO: Solve it with build-order or manual overrides for the other packages
 

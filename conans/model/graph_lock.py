@@ -230,7 +230,7 @@ class Lockfile(object):
     def _resolve_overrides(self, require):
         existing = self._overrides.get(require.ref)
         if existing is not None and len(existing) == 1:
-            require.overriden_ref = require.ref  # Store that the require has been overriden
+            require.overridden_ref = require.ref  # Store that the require has been overridden
             ref = next(iter(existing))
             require.ref = ref
             require.override_ref = ref

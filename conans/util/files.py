@@ -245,7 +245,7 @@ def mkdir(path):
 
 
 def gzopen_without_timestamps(name, mode="r", fileobj=None, compresslevel=None, **kwargs):
-    """ !! Method overrided by laso to pass mtime=0 (!=None) to avoid time.time() was
+    """ !! Method overridden by laso to pass mtime=0 (!=None) to avoid time.time() was
         setted in Gzip file causing md5 to change. Not possible using the
         previous tarfile open because arguments are not passed to GzipFile constructor
     """

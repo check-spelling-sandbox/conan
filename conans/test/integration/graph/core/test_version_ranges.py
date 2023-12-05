@@ -232,7 +232,7 @@ class TestVersionRangesOverridesDiamond(GraphManagerTest):
         self._check_node(libb, "libb/0.1#123", dependents=[app], deps=[liba])
         self._check_node(app, "app/0.1", deps=[libb, liba])
 
-    def test_transitive_overriden(self):
+    def test_transitive_overridden(self):
         # app -> libb/0.1 -(range >0)-> liba/0.1
         #   \ ---------liba/0.1-------------/
         self.recipe_cache("liba/0.1")
@@ -302,7 +302,7 @@ class TestVersionRangesOverridesDiamond(GraphManagerTest):
         self._check_node(libb, "libb/0.1#123", dependents=[app], deps=[liba])
         self._check_node(app, "app/0.1", deps=[libb, liba])
 
-    def test_two_ranges_overriden(self):
+    def test_two_ranges_overridden(self):
         # app -> libb/0.1 -(range >0)-> liba/0.1
         #   \ ---------liba/[<0.3>]-------------/
         self.recipe_cache("liba/0.1")
@@ -322,7 +322,7 @@ class TestVersionRangesOverridesDiamond(GraphManagerTest):
         self._check_node(libb, "libb/0.1#123", dependents=[app], deps=[liba])
         self._check_node(app, "app/0.1", deps=[libb, liba])
 
-    def test_two_ranges_overriden_no_conflict(self):
+    def test_two_ranges_overridden_no_conflict(self):
         # app -> libb/0.1 -(range >0)-> liba/0.1
         #   \ ---------liba/[<0.3>]-------------/
         # Conan learned to solve this conflict in 2.0.14

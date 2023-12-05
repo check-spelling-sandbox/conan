@@ -275,8 +275,8 @@ class Overrides:
             for r in n.conanfile.requires.values():
                 if r.override:
                     continue
-                if r.overriden_ref and not r.force:
-                    overrides.setdefault(r.overriden_ref, set()).add(r.override_ref)
+                if r.overridden_ref and not r.force:
+                    overrides.setdefault(r.overridden_ref, set()).add(r.override_ref)
                 else:
                     overrides.setdefault(r.ref, set()).add(None)
 

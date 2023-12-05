@@ -78,7 +78,7 @@ class DepsGraphBuilder(object):
 
             prev_ref = prev_node.ref if prev_node else prev_require.ref
             if prev_require.force or prev_require.override:  # override
-                require.overriden_ref = require.ref  # Store that the require has been overriden
+                require.overridden_ref = require.ref  # Store that the require has been overridden
                 require.override_ref = prev_ref
                 require.ref = prev_ref
             else:

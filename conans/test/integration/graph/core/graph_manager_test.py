@@ -1717,7 +1717,7 @@ class TestDiamondMultiple(GraphManagerTest):
 class TransitiveOverridesGraphTest(GraphManagerTest):
 
     def test_diamond(self):
-        # app -> libb0.1 -> liba0.2 (overriden to lib0.2)
+        # app -> libb0.1 -> liba0.2 (overridden to lib0.2)
         #    \-> --------- ->/
         self.recipe_cache("liba/0.1")
         self.recipe_cache("liba/0.2")
@@ -1740,7 +1740,7 @@ class TransitiveOverridesGraphTest(GraphManagerTest):
         self._check_node(liba, "liba/0.2#123", dependents=[libb, app])
 
     def test_diamond_conflict(self):
-        # app -> libb0.1 -> liba0.2 (overriden to lib0.2)
+        # app -> libb0.1 -> liba0.2 (overridden to lib0.2)
         #    \-> --------- ->/
         self.recipe_cache("liba/0.1")
         self.recipe_cache("liba/0.2")
@@ -1793,7 +1793,7 @@ class TransitiveOverridesGraphTest(GraphManagerTest):
 
     def test_diamond_reverse_order(self):
         # foo ---------------------------------> dep1/2.0
-        #   \ -> dep2/1.0--(dep1/1.0 overriden)-->/
+        #   \ -> dep2/1.0--(dep1/1.0 overridden)-->/
         self.recipe_cache("dep1/1.0")
         self.recipe_cache("dep1/2.0")
         self.recipe_cache("dep2/1.0", ["dep1/1.0"])
@@ -1813,7 +1813,7 @@ class TransitiveOverridesGraphTest(GraphManagerTest):
 
     def test_diamond_reverse_order_conflict(self):
         # foo ---------------------------------> dep1/2.0
-        #   \ -> dep2/1.0--(dep1/1.0 overriden)-->/
+        #   \ -> dep2/1.0--(dep1/1.0 overridden)-->/
         self.recipe_cache("dep1/1.0")
         self.recipe_cache("dep1/2.0")
         self.recipe_cache("dep2/1.0", ["dep1/1.0"])
@@ -1858,7 +1858,7 @@ class TransitiveOverridesGraphTest(GraphManagerTest):
 class PureOverrideTest(GraphManagerTest):
 
     def test_diamond(self):
-        # app -> libb0.1 -> liba0.2 (overriden to lib0.2)
+        # app -> libb0.1 -> liba0.2 (overridden to lib0.2)
         #    \-> ---(override)------ ->/
         self.recipe_cache("liba/0.1")
         self.recipe_cache("liba/0.2")
@@ -1888,8 +1888,8 @@ class PureOverrideTest(GraphManagerTest):
         # TODO: No Revision??? Because of consumer?
         self._check_node(app, "app/0.1", deps=[])
 
-    def test_invisible_not_overriden(self):
-        # app -> libb0.1 -(visible=False)----> liba0.1 (NOT overriden to lib0.2)
+    def test_invisible_not_overridden(self):
+        # app -> libb0.1 -(visible=False)----> liba0.1 (NOT overridden to lib0.2)
         #    \-> -----(override not used)------->/
         self.recipe_cache("liba/0.1")
         self.recipe_conanfile("libb/0.1", GenConanfile().with_requirement("liba/0.1",
