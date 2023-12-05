@@ -97,7 +97,7 @@ def test_lock_create_build_require_transitive():
     lock = json.loads(c.load("tool/conan.lock"))
     assert "dep/0.1" in lock["build_requires"][0]
 
-    # Now try to apply it in  graph info, even if a new 0.2 verion si there
+    # Now try to apply it in  graph info, even if a new 0.2 verion is there
     c.run("create dep --build-require --version=0.2 -s:b os=Windows -s:h os=Linux")
     assert "dep/0.2: MYOS:Windows!!" in c.out
     assert "dep/0.2: TARGET:Linux!!" in c.out
