@@ -6,7 +6,7 @@ from conans.test.utils.tools import TestClient
 def test_conan_version_str():
     """
     conanfile.version should always be a string.
-    If comparison neeeded use Version(self.version) or self.ref.version
+    If comparison needed use Version(self.version) or self.ref.version
     """
     # https://github.com/conan-io/conan/issues/10372
     client = TestClient()
