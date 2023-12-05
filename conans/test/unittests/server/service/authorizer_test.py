@@ -139,7 +139,7 @@ class AuthorizerTest(unittest.TestCase):
                           authorizer.check_write_package, "pepe", self.openssl_pref2)
 
     def test_authenticated_user_wildcard_permissions(self):
-        """Check that authenciated user wildcard permissions logic is ok"""
+        """Check that authenticated user wildcard permissions logic is ok"""
         # Only authenticated users can read openssl
         read_perms = [(str(self.openssl_ref), "?"), ("*/*@*/*", "*")]
         # Authenticated users can write any
