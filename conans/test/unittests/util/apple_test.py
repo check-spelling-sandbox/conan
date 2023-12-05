@@ -19,7 +19,7 @@ class FakeSettings(object):
         self._arch = arch
         self._os_sdk = os_sdk
         self._os_version = os_version
-        self._os_subystem = subsystem
+        self._os_subsystem = subsystem
 
     def get_safe(self, name):
         if name == 'os':
@@ -31,7 +31,7 @@ class FakeSettings(object):
         elif name == "os.version":
             return self._os_version
         elif name == "os.subsystem":
-            return self._os_subystem
+            return self._os_subsystem
 
 
 class TestApple:

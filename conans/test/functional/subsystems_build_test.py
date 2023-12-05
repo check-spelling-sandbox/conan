@@ -132,7 +132,7 @@ class TestSubsystemsBuild:
     @pytest.mark.tool("mingw64")
     def test_mingw64(self, static):
         """
-        This will work if you installed the Mingw toolchain inside msys2 as TestSubystems above
+        This will work if you installed the Mingw toolchain inside msys2 as TestSubsystems above
         64-bit GCC, binaries
         """
         client = TestClient()
@@ -247,7 +247,7 @@ class TestSubsystemsBuild:
     @pytest.mark.tool("mingw32")
     def test_mingw32(self, static):
         """
-        This will work if you installed the Mingw toolchain inside msys2 as TestSubystems above
+        This will work if you installed the Mingw toolchain inside msys2 as TestSubsystems above
         32-bit GCC, binaries for generic Windows (no dependency on MSYS runtime)
         """
         client = TestClient()
@@ -265,7 +265,7 @@ class TestSubsystemsBuild:
     @pytest.mark.tool("ucrt64")
     def test_ucrt64(self, static):
         """
-        This will work if you installed the Mingw toolchain inside msys2 as TestSubystems above
+        This will work if you installed the Mingw toolchain inside msys2 as TestSubsystems above
         """
         client = TestClient()
         self._build(client, static_runtime=static)
