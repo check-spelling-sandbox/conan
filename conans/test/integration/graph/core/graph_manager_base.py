@@ -152,10 +152,10 @@ class GraphManagerTest(unittest.TestCase):
         for d in node.neighbors():
             assert d in deps
 
-        dependants = node.inverse_neighbors()
-        self.assertEqual(len(dependants), len(dependents))
+        dependents = node.inverse_neighbors()
+        self.assertEqual(len(dependents), len(dependents))
         for d in dependents:
-            self.assertIn(d, dependants)
+            self.assertIn(d, dependents)
 
         if settings is not None:
             for k, v in settings.items():

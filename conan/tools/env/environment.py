@@ -138,7 +138,7 @@ class _EnvValue:
     def get_str(self, placeholder, subsystem, pathsep):
         """
         :param subsystem:
-        :param placeholder: a OS dependant string pattern of the previous env-var value like
+        :param placeholder: a OS dependent string pattern of the previous env-var value like
         $PATH, %PATH%, et
         :param pathsep: The path separator, typically ; or :
         :return: a string representation of the env-var value, including the $NAME-like placeholder

@@ -61,7 +61,7 @@ class Node(object):
         # real graph model
         self.transitive_deps = OrderedDict()  # of _TransitiveRequirement
         self.dependencies = []  # Ordered Edges
-        self.dependants = []  # Edges
+        self.dependents = []  # Edges
         self.error = None
         self.cant_build = False  # It will set to a str with a reason if the validate_build() fails
         self.should_build = False  # If the --build or policy wants to build this binary
@@ -102,14 +102,14 @@ class Node(object):
         self.transitive_deps[require] = TransitiveRequirement(require, node)
 
         # Check if need to propagate downstream
-        if not self.dependants:
+        if not self.dependents:
             return
 
         if src_node is not None:  # This happens when closing a loop, and we need to know the edge
-            d = [d for d in self.dependants if d.src is src_node][0]  # TODO: improve ugly
+            d = [d for d in self.dependents if d.src is src_node][0]  # TODO: improve ugly
         else:
-            assert len(self.dependants) == 1
-            d = self.dependants[0]
+            assert len(self.dependents) == 1
+            d = self.dependents[0]
 
         down_require = d.require.transform_downstream(self.conanfile.package_type, require,
                                                       node.conanfile.package_type)
@@ -143,33 +143,33 @@ class Node(object):
         # Check if need to propagate downstream
         # Then propagate downstream
 
-        # Seems the algorithm depth-first, would only have 1 dependant at most to propagate down
+        # Seems the algorithm depth-first, would only have 1 dependent at most to propagate down
         # at any given time
-        if not self.dependants:
+        if not self.dependents:
             return result
-        assert len(self.dependants) == 1
-        dependant = self.dependants[0]
+        assert len(self.dependents) == 1
+        dependent = self.dependents[0]
 
         # TODO: Implement an optimization where the requires is checked against a graph global
         # print("    Lets check_downstream one more")
-        down_require = dependant.require.transform_downstream(self.conanfile.package_type,
+        down_require = dependent.require.transform_downstream(self.conanfile.package_type,
                                                               require, None)
 
         if down_require is None:
             # print("    No need to check downstream more")
             return result
 
-        source_node = dependant.src
+        source_node = dependent.src
         return source_node.check_downstream_exists(down_require) or result
 
     def check_loops(self, new_node):
         if self.ref == new_node.ref and self.context == new_node.context:
             return self
-        if not self.dependants:
+        if not self.dependents:
             return
-        assert len(self.dependants) == 1
-        dependant = self.dependants[0]
-        source_node = dependant.src
+        assert len(self.dependents) == 1
+        dependent = self.dependents[0]
+        source_node = dependent.src
         return source_node.check_loops(new_node)
 
     @property
@@ -195,13 +195,13 @@ class Node(object):
             assert edge not in self.dependencies
             self.dependencies.append(edge)
         else:
-            self.dependants.append(edge)
+            self.dependents.append(edge)
 
     def neighbors(self):
         return [edge.dst for edge in self.dependencies]
 
     def inverse_neighbors(self):
-        return [edge.src for edge in self.dependants]
+        return [edge.src for edge in self.dependents]
 
     def __repr__(self):
         return repr(self.conanfile)

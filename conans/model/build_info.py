@@ -492,7 +492,7 @@ class CppInfo:
     def get_sorted_components(self):
         """
         Order the components taking into account if they depend on another component in the
-        same package (not scoped with ::). First less dependant.
+        same package (not scoped with ::). First less dependent.
 
         :return: ``OrderedDict`` {component_name: component}
         """
@@ -517,7 +517,7 @@ class CppInfo:
         # the deployed
         if self.has_components:
             result = _Component()
-            # Reversed to make more dependant first
+            # Reversed to make more dependent first
             for component in reversed(self.get_sorted_components().values()):
                 result.merge(component)
             # NOTE: The properties are not aggregated because they might refer only to the
