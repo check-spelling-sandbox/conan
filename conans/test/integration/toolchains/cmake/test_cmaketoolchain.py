@@ -1178,7 +1178,7 @@ def test_extra_flags():
     assert 'string(APPEND CONAN_EXE_LINKER_FLAGS " extra_exelinkflags exelinkflags")' in toolchain
 
 
-def test_avoid_ovewrite_user_cmakepresets():
+def test_avoid_overwrite_user_cmakepresets():
     # https://github.com/conan-io/conan/issues/15052
     c = TestClient()
     c.save({"conanfile.txt": "",
