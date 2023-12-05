@@ -169,7 +169,7 @@ class TestDownloadUpload:
 
     @pytest.mark.parametrize("prev_list", [False, True])
     def test_download_upload_all(self, client, prev_list):
-        # We need to be consequeent with the pattern, it is not the same defaults for
+        # We need to be consequent with the pattern, it is not the same defaults for
         # download and for list
         pattern = "zlib/*#latest:*#latest"
         if prev_list:
