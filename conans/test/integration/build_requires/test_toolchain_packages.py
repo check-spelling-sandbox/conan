@@ -7,7 +7,7 @@ from conans.test.utils.tools import TestClient
 
 def test_android_ndk():
     """ emulates the androidndk, a single package per OS-arch, that can target any
-    android architecture (not especialized binary per target)
+    android architecture (not specialized binary per target)
     """
     c = TestClient()
 
