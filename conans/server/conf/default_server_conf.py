@@ -1,6 +1,6 @@
 default_server_conf = """[server]
 # WARNING! Change default variable of jwt_secret. You should change it periodically
-# It only affects to current authentication tokens, you can change safetely anytime
+# It only affects to current authentication tokens, you can change safely anytime
 # When it changes user are just forced to log in again
 jwt_secret: {jwt_secret}
 jwt_expire_minutes: 120
