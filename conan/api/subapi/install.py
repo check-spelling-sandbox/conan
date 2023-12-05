@@ -12,7 +12,7 @@ class InstallAPI:
 
     def install_binaries(self, deps_graph, remotes=None):
         """ Install binaries for dependency graph
-        :param deps_graph: Dependency graph to intall packages for
+        :param deps_graph: Dependency graph to install packages for
         :param remotes:
         """
         app = ConanApp(self.conan_api.cache_folder, self.conan_api.config.global_conf)
@@ -23,7 +23,7 @@ class InstallAPI:
     def install_system_requires(self, graph, only_info=False):
         """ Install binaries for dependency graph
         :param only_info: Only allow reporting and checking, but never install
-        :param graph: Dependency graph to intall packages for
+        :param graph: Dependency graph to install packages for
         """
         app = ConanApp(self.conan_api.cache_folder, self.conan_api.config.global_conf)
         installer = BinaryInstaller(app, self.conan_api.config.global_conf)
