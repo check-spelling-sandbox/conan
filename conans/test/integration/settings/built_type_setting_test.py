@@ -33,7 +33,7 @@ class Pkg(ConanFile):
         client.run("install --requires=pkg/0.1@lasote/testing -pr=myprofile --build='*'")
         self.assertEqual(1, str(client.out).count("BUILD TYPE: Not defined"))
 
-        # test_package is totally consinstent with the regular package
+        # test_package is totally consistent with the regular package
         client.run("create . --name=pkg --version=0.1 --user=lasote --channel=testing -pr=myprofile")
         self.assertEqual(2, str(client.out).count("BUILD TYPE: Not defined"))
 
