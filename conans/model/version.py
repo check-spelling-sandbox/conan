@@ -22,7 +22,7 @@ class _VersionItem:
         return str(self._v)
 
     def __add__(self, other):
-        # necessary for the "bump()" functionality. Other aritmetic operations are missing
+        # necessary for the "bump()" functionality. Other arithmetic operations are missing
         return self._v + other
 
     def __eq__(self, other):
