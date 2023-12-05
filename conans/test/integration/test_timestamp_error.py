@@ -9,7 +9,7 @@ def test_timestamp_error():
     # https://github.com/conan-io/conan/issues/11606
 
     It was crashing because of multiple test_requires, some of them being BINARY_SKIP,
-    and the prev_timestamp was not being assigned by GraphBinariesAnalizer when caching
+    and the prev_timestamp was not being assigned by GraphBinariesAnalyzer when caching
     """
 
     c = TestClient(default_server_user=True)
