@@ -465,7 +465,7 @@ class PyRequiresExtendTest(unittest.TestCase):
                     self.python_requires["base2"].module.myhelper.myhelp(self.output)
             """)
         # This should work, even if there is a local "myhelper.py" file, which could be
-        # accidentaly imported (and it was, it was a bug)
+        # accidentally imported (and it was, it was a bug)
         client.save({"conanfile.py": conanfile})
         client.run("create . --name=pkg --version=0.1 --user=user --channel=testing")
         self.assertIn("pkg/0.1@user/testing: MyHelperOutput!", client.out)
