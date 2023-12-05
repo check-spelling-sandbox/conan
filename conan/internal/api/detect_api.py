@@ -78,7 +78,7 @@ def detect_arch():
 
 def _get_solaris_architecture():
     # under intel solaris, platform.machine()=='i86pc' so we need to handle
-    # it early to suport 64-bit
+    # it early to support 64-bit
     processor = platform.processor()
     kernel_bitness, elf = platform.architecture()
     if "sparc" in processor:
