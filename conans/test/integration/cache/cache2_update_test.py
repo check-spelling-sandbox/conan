@@ -45,7 +45,7 @@ class TestUpdateFlows:
         # updating the date to the current time
         # - If we want to install the revision and create it with a new date use --update-date
         # (name to be decided)
-        # - Revisions are considered inmutable: if for example we do a conan install --update of a
+        # - Revisions are considered immutable: if for example we do a conan install --update of a
         # revision that is already in the cache, but has a newer date in the remote, we will not install
         # anything, just updating the date in the cache to the one in the remote, so if you want to
         # get what the remote has you have to re-install you will have to remove the local
