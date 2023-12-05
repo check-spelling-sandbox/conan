@@ -71,7 +71,7 @@ class TestOptions:
 
     def test_dumps(self):
         text = self.sut.dumps()
-        # Output is ordereded alphabetically
+        # Output is ordered alphabetically
         expected = textwrap.dedent("""\
             optimized=3
             path=mypath
