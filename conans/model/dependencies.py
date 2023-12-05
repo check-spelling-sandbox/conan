@@ -83,7 +83,7 @@ class ConanFileDependencies(UserRequirementsDict):
         return ConanFileDependencies(d)
 
     def filter(self, require_filter, remove_system=True):
-        # FIXME: Copy of hte above, to return ConanFileDependencies class object
+        # FIXME: Copy of the above, to return ConanFileDependencies class object
         def filter_fn(require):
             for k, v in require_filter.items():
                 if getattr(require, k) != v:
