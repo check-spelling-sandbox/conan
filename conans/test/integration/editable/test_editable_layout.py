@@ -47,7 +47,7 @@ def test_editable_folders_root():
     assert f"pkg/0.1: PKG source_folder {c.current_folder}" in c.out
 
 
-def test_editable_folders_sibiling_root():
+def test_editable_folders_sibling_root():
     """ Editables with self.folders.root = ".." should work too for sibling folders
     """
     c = TestClient()
