@@ -136,7 +136,7 @@ class TestAlias(GraphManagerTest):
                                 (liba, True, True, False, False)])
         _check_transitive(libb, [(liba, True, True, False, False)])
 
-    def test_alias_tansitive(self):
+    def test_alias_transitive(self):
         # app -> liba/giga -(alias)->-> liba/mega -(alias)-> liba/latest -(alias)->liba/0.1
 
         self.recipe_cache("liba/0.1")
