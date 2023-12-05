@@ -157,7 +157,7 @@ def test_brew_install_install_mode():
 def test_collect_system_requirements():
     """ we can know the system_requires for every package because they are part of the graph,
     this naturally execute at ``install``, but we can also prove that with ``graph info`` we can
-    for it to with the righ ``mode=collect`` mode.
+    for it to with the right ``mode=collect`` mode.
     """
     client = TestClient()
     client.save({"conanfile.py": textwrap.dedent("""
